@@ -13,14 +13,10 @@ function userInput() {
 
 
 function getDogImage(numInput) {
-  if (numInput >= 1 && numInput <= 50) {
     fetch(`https://dog.ceo/api/breeds/image/random/${numInput}`)
        .then(response => response.json())
        .then(responseJson => console.log(responseJson))
        .catch(error => alert("Something went wrong. Try again later."));
-  } else if (numInput > 50) {
-    return alert("Please choose a number equal or less than 50");
-  }
 }
 
 function displayResults(responseJson) {
